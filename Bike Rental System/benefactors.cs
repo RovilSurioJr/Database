@@ -11,10 +11,6 @@ namespace Bike_Rental_System
             InitializeComponent();
         }
         SqlConnection Con = new SqlConnection(@"Data Source=DESKTOP-FQPTJQM\SQLEXPRESS;Initial Catalog=Bike_Rental;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -29,15 +25,14 @@ namespace Bike_Rental_System
                 }
                 else
                 { 
-                    string query = "INSERT INTO Benefactors values(" + benefactor_No.Text + ",'" + last_name.Text + "','" + first_name.Text + "','" + middle_name.Text + "','" + email.Text + "','" + phone_No.Text + "','" + address.Text + "','" + isActiveState.Text + "')";
+                    string query = "INSERT INTO Benefactors VALUES(" + benefactor_No.Text + ",'" + last_name.Text + "','" + 
+                        first_name.Text + "','" + middle_name.Text + "','" + email.Text + "','" + phone_No.Text + "','" + address.Text + "','" + isActiveState.Text + "')";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("benefactor added successfully");
                     Con.Close();
 
                 }
-
-
 
             }
             catch (Exception ex)
@@ -46,7 +41,6 @@ namespace Bike_Rental_System
                 Con.Close();
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -55,7 +49,7 @@ namespace Bike_Rental_System
         private void button5_Click(object sender, EventArgs e) //  REFRESH OR SHOW ALL
         {
             Con.Open();
-            string query = "select * from Benefactors";
+            string query = "SELECT * FROM Benefactors";
             SqlDataAdapter sqldata = new SqlDataAdapter(query, Con);
             System.Data.DataTable dtbl = new System.Data.DataTable();
             sqldata.Fill(dtbl);
@@ -64,31 +58,23 @@ namespace Bike_Rental_System
             Con.Close();
         }
 
-        private void button6_Click(object sender, EventArgs e) // SELEECT ACTIVE RECORDS
+        private void button6_Click(object sender, EventArgs e) // SELECT ACTIVE RECORDS
         {
             Con.Open();
-          
             string query = "SELECT benefactor_No, surname, first_name, middle_name, email, phone_No, address from Benefactors WHERE Benefactors.isActive = 'TRUE'";
-
             SqlDataAdapter sqldata = new SqlDataAdapter(query, Con);
             System.Data.DataTable dtbl = new System.Data.DataTable();
             sqldata.Fill(dtbl);
-
             dgvbenefactors.DataSource = dtbl;
             Con.Close();
-
         }
-
         private void button7_Click(object sender, EventArgs e) // SELEECT INACTIVE RECORS
         {
             Con.Open();
-       
             string query = "SELECT benefactor_No, surname, first_name, middle_name, email, phone_No, address from Benefactors WHERE Benefactors.isActive  = 'FALSE'";
-
             SqlDataAdapter sqldata = new SqlDataAdapter(query, Con);
             System.Data.DataTable dtbl = new System.Data.DataTable();
             sqldata.Fill(dtbl);
-
             dgvbenefactors.DataSource = dtbl;
             Con.Close();
         }
@@ -107,9 +93,7 @@ namespace Bike_Rental_System
                 address.Text = row.Cells["address"].Value.ToString();
                 isActiveState.Text = row.Cells["isActive"].Value.ToString();
             }
-
         }
-
         private void deletebut_Click(object sender, EventArgs e)
         {
             try
@@ -132,6 +116,53 @@ namespace Bike_Rental_System
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        private void editbut_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (benefactor_No.Text == "" || last_name.Text == "" || first_name.Text == "" || email.Text == "" || phone_No.Text == "" || address.Text == "")
+                {
+                    MessageBox.Show("There is missing field! Only Middle_name allow NULLS");
+                    Con.Close();
+                }
+                else
+                {
+                    Con.Open();
+                    string query = "UPDATE Benefactors SET surname = '" + last_name.Text + "', first_name = '" + first_name.Text + "', " +
+                        "middle_name = '" + middle_name.Text + "', email = '" + email.Text + "',phone_No = '" + phone_No.Text + "', " +
+                        "address = '" + address.Text + "', isActive = '" + isActiveState.Text + "' WHERE benefactor_No ='" + benefactor_No.Text + "'";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Benefactor record updated");
+                    Con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Con.Close();
+            }
+        }
+
+        private void cleartextbox_Click(object sender, EventArgs e)
+        {
+            Action<Control.ControlCollection> func = null;
+            func = (controls) =>
+            {
+                foreach (Control control in controls)
+                {
+                    if (control is TextBox)
+                    {
+                        (control as TextBox).Clear();
+                    }
+                    else
+                    {
+                        func(control.Controls);
+                    }
+                }
+            };
+            func(Controls);
         }
     }
 }
