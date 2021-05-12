@@ -20,7 +20,7 @@ namespace Bike_Rental_System
         private void button5_Click(object sender, EventArgs e)
         {
             Con.Open();
-            string query = "select * from Staffs";
+            string query = "SELECT * from Staffs";
             SqlDataAdapter sqldata = new SqlDataAdapter(query, Con);
             System.Data.DataTable dtbl = new System.Data.DataTable();
             sqldata.Fill(dtbl);
@@ -34,7 +34,7 @@ namespace Bike_Rental_System
             try
             {
                 Con.Open();
-                string query = "insert into Staffs values(" + staff_No.Text + ",'" + last_name.Text + "','" + first_name.Text + "','" + middle_name.Text + "','" + email.Text + "','" + phone_No.Text + "','"  + isActivestate.Text + "')";
+                string query = "INSERT INTO Staffs values(" + staff_No.Text + ",'" + last_name.Text + "','" + first_name.Text + "','" + middle_name.Text + "','" + email.Text + "','" + phone_No.Text + "','"  + isActivestate.Text + "')";
                 SqlCommand cmd = new SqlCommand(query, Con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Staff Added Successfully");

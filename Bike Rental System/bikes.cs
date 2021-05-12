@@ -68,7 +68,7 @@ namespace Bike_Rental_System
             try
             {
                 Con.Open();
-                string query = "insert into Bikes values("+bike_No.Text +",'"+bike_model.Text+"','"+benefactor_No.Text+"','"+bike_color.Text+"','"+bike_accessory.Text+"','"+bike_condition.Text+"','"+donation_date.Text+"','"+isActiveState.Text+"')";
+                string query = "INSERT INTO Bikes values("+bike_No.Text +",'"+bike_model.Text+"','"+benefactor_No.Text+"','"+bike_color.Text+"','"+bike_accessory.Text+"','"+bike_condition.Text+"','"+donation_date.Text+"','"+isActiveState.Text+"')";
                 SqlCommand cmd = new SqlCommand(query, Con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("bike added successfully");
@@ -84,7 +84,7 @@ namespace Bike_Rental_System
         private void button5_Click(object sender, EventArgs e)
         {
             Con.Open();
-            string query = "select * from Bikes";
+            string query = "SELECT * from Bikes";
             SqlDataAdapter sqldata = new SqlDataAdapter(query, Con);
             System.Data.DataTable dtbl = new System.Data.DataTable();
             sqldata.Fill(dtbl);

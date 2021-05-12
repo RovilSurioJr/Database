@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -22,18 +22,18 @@ namespace Bike_Rental_System
             {
                 Con.Open();
  
-                if (last_name.Text == "" || first_name.Text == "" || email.Text == "" || phone_No.Text  == "" || address.Text == "" || isActiveState.Text == "")
+                if (benefactor_No.Text == "" || last_name.Text == "" || first_name.Text == "" || email.Text == "" || phone_No.Text  == "" || address.Text == "" || isActiveState.Text == "")
                 {
                     MessageBox.Show("There are columns that are not allowing nulls!");
                     Con.Close();
                 }
                 else
-                { 
-                    string query = "INSERT INTO Benefactors values(" + benefactor_No.Text + ",'" + last_name.Text + "','" + first_name.Text + "','" + middle_name.Text + "','" + email.Text + "','" + phone_No.Text + "','" + address.Text + "','" + isActiveState.Text + "')";
-                    SqlCommand cmd = new SqlCommand(query, Con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("benefactor added successfully");
-                    Con.Close();
+                {
+                  string query = "INSERT INTO Benefactors values(" + benefactor_No.Text + ",'" + last_name.Text + "','" + first_name.Text + "','" + middle_name.Text + "','" + email.Text + "','" + phone_No.Text + "','" + address.Text + "','" + isActiveState.Text + "')";
+                  SqlCommand cmd = new SqlCommand(query, Con);
+                  cmd.ExecuteNonQuery();
+                  MessageBox.Show("benefactor added successfully");
+                  Con.Close();
 
                 }
 
@@ -99,39 +99,19 @@ namespace Bike_Rental_System
             {
                 DataGridViewRow row = this.dgvbenefactors.Rows[e.RowIndex];
                 benefactor_No.Text = row.Cells["benefactor_No"].Value.ToString();
-                last_name.Text = row.Cells["surname"].Value.ToString();
-                first_name.Text = row.Cells["first_name"].Value.ToString();
-                middle_name.Text = row.Cells["middle_name"].Value.ToString();
-                email.Text = row.Cells["email"].Value.ToString();
-                phone_No.Text = row.Cells["phone_No"].Value.ToString();
-                address.Text = row.Cells["address"].Value.ToString();
-                isActiveState.Text = row.Cells["isActive"].Value.ToString();
+
+                //benefactor_No.Text = dgvbenefactors.SelectedRows[0].Cells[0].Value.ToString();
+                //last_name.Text = dgvbenefactors.SelectedRows[0].Cells[1].Value.ToString();
+                //first_name.Text = dgvbenefactors.SelectedRows[0].Cells[2].Value.ToString();
+                //middle_name.Text = dgvbenefactors.SelectedRows[0].Cells[3].Value.ToString();
+                //email.Text = dgvbenefactors.SelectedRows[0].Cells[4].Value.ToString();
+                //phone_No.Text = dgvbenefactors.SelectedRows[0].Cells[5].Value.ToString();
+                // address.Text = dgvbenefactors.SelectedRows[0].Cells[6].Value.ToString();
+                //isActiveState.Text = dgvbenefactors.SelectedRows[0].Cells[7].Value.ToString();
             }
 
-        }
 
-        private void deletebut_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if(benefactor_No.Text == "")
-                {
-                    MessageBox.Show("Select the benefactor to delete");
-                }
-                else
-                {
-                    Con.Open();
-                    string query = "DELETE FROM Benefactors WHERE benefactor_No=" + benefactor_No.Text + "";
-                    SqlCommand cmd = new SqlCommand(query, Con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Benefactor record deleted");
-                    Con.Close();
-                }
 
-            }catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
     }
 }
