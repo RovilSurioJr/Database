@@ -31,10 +31,9 @@ namespace Bike_Rental_System
         {
             this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.addStaffbutton = new System.Windows.Forms.Button();
             this.address = new System.Windows.Forms.TextBox();
             this.phone_No = new System.Windows.Forms.TextBox();
             this.email = new System.Windows.Forms.TextBox();
@@ -52,8 +51,10 @@ namespace Bike_Rental_System
             this.panel1 = new System.Windows.Forms.Panel();
             this.isActivestate = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dgvStaffs = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStaffs)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,20 +74,11 @@ namespace Bike_Rental_System
             this.button5.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(341, 3);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(91, 32);
+            this.button5.Size = new System.Drawing.Size(156, 32);
             this.button5.TabIndex = 23;
-            this.button5.Text = "REFRESH";
+            this.button5.Text = "REFRESH TABLE";
             this.button5.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.Location = new System.Drawing.Point(341, 36);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(447, 349);
-            this.dataGridView1.TabIndex = 22;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -110,16 +102,17 @@ namespace Bike_Rental_System
             this.button3.Text = "EDIT";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // addStaffbutton
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Info;
-            this.button2.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(26, 353);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(82, 32);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "ADD";
-            this.button2.UseVisualStyleBackColor = false;
+            this.addStaffbutton.BackColor = System.Drawing.SystemColors.Info;
+            this.addStaffbutton.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addStaffbutton.Location = new System.Drawing.Point(26, 353);
+            this.addStaffbutton.Name = "addStaffbutton";
+            this.addStaffbutton.Size = new System.Drawing.Size(82, 32);
+            this.addStaffbutton.TabIndex = 19;
+            this.addStaffbutton.Text = "ADD";
+            this.addStaffbutton.UseVisualStyleBackColor = false;
+            this.addStaffbutton.Click += new System.EventHandler(this.button2_Click);
             // 
             // address
             // 
@@ -257,13 +250,13 @@ namespace Bike_Rental_System
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel1.Controls.Add(this.dgvStaffs);
             this.panel1.Controls.Add(this.isActivestate);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.addStaffbutton);
             this.panel1.Controls.Add(this.address);
             this.panel1.Controls.Add(this.phone_No);
             this.panel1.Controls.Add(this.email);
@@ -302,21 +295,41 @@ namespace Bike_Rental_System
             this.label9.TabIndex = 24;
             this.label9.Text = "Active state:";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("p5hatty", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(757, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(31, 26);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dgvStaffs
+            // 
+            this.dgvStaffs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStaffs.Location = new System.Drawing.Point(346, 41);
+            this.dgvStaffs.Name = "dgvStaffs";
+            this.dgvStaffs.Size = new System.Drawing.Size(442, 337);
+            this.dgvStaffs.TabIndex = 26;
+            // 
             // staff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "staff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "staff";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStaffs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,10 +339,9 @@ namespace Bike_Rental_System
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button addStaffbutton;
         private System.Windows.Forms.TextBox address;
         private System.Windows.Forms.TextBox phone_No;
         private System.Windows.Forms.TextBox email;
@@ -347,5 +359,7 @@ namespace Bike_Rental_System
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox isActivestate;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dgvStaffs;
+        private System.Windows.Forms.Button button1;
     }
 }

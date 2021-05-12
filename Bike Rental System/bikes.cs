@@ -81,19 +81,6 @@ namespace Bike_Rental_System
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Con.Open();
-            string query = "select * from Bikes";
-            SqlDataAdapter sqldata = new SqlDataAdapter(query, Con);
-            System.Data.DataTable dtbl = new System.Data.DataTable();
-            sqldata.Fill(dtbl);
-
-            dgvBikes.DataSource = dtbl;
-            Con.Close();
-
-        }
-
         private void button5_Click(object sender, EventArgs e)
         {
             Con.Open();
@@ -106,5 +93,33 @@ namespace Bike_Rental_System
             Con.Close();
 
         }
+
+        private void inactivebut_Click(object sender, EventArgs e)
+        {
+            Con.Open();
+            string query = "SELECT bike_No, bike_model, benefactor_No, bike_color, bike_accessory, bike_condition, donation_date from Bikes WHERE Bikes.isActive = 'FALSE'";
+            SqlDataAdapter sqldata = new SqlDataAdapter(query, Con);
+            System.Data.DataTable dtbl = new System.Data.DataTable();
+            sqldata.Fill(dtbl);
+
+            dgvBikes.DataSource = dtbl;
+            Con.Close();
+
+        }
+
+        private void activebut_Click(object sender, EventArgs e)
+        {
+            Con.Open();
+            string query = "SELECT bike_No, bike_model, benefactor_No, bike_color, bike_accessory, bike_condition, donation_date from Bikes WHERE Bikes.isActive = 'TRUE'";
+            SqlDataAdapter sqldata = new SqlDataAdapter(query, Con);
+            System.Data.DataTable dtbl = new System.Data.DataTable();
+            sqldata.Fill(dtbl);
+
+            dgvBikes.DataSource = dtbl;
+            Con.Close();
+
+        }
+
+
     }
 }

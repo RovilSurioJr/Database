@@ -82,7 +82,7 @@ namespace Bike_Rental_System
             // 
             this.button5.BackColor = System.Drawing.SystemColors.Info;
             this.button5.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(341, 3);
+            this.button5.Location = new System.Drawing.Point(770, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(152, 32);
             this.button5.TabIndex = 23;
@@ -261,7 +261,7 @@ namespace Bike_Rental_System
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("p5hatty", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(225, 30);
+            this.label1.Location = new System.Drawing.Point(11, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(340, 27);
             this.label1.TabIndex = 7;
@@ -296,13 +296,13 @@ namespace Bike_Rental_System
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(0, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(801, 399);
+            this.panel1.Size = new System.Drawing.Size(1141, 403);
             this.panel1.TabIndex = 6;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("p5hatty", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(757, 12);
+            this.button1.Location = new System.Drawing.Point(1084, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(31, 26);
             this.button1.TabIndex = 8;
@@ -315,14 +315,15 @@ namespace Bike_Rental_System
             this.dgvbenefactors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvbenefactors.Location = new System.Drawing.Point(341, 41);
             this.dgvbenefactors.Name = "dgvbenefactors";
-            this.dgvbenefactors.Size = new System.Drawing.Size(447, 337);
+            this.dgvbenefactors.Size = new System.Drawing.Size(774, 337);
             this.dgvbenefactors.TabIndex = 26;
+            this.dgvbenefactors.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvbenefactors_CellContentClick);
             // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.SystemColors.Info;
             this.button6.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(499, 3);
+            this.button6.Location = new System.Drawing.Point(928, 3);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(82, 32);
             this.button6.TabIndex = 27;
@@ -334,7 +335,7 @@ namespace Bike_Rental_System
             // 
             this.button7.BackColor = System.Drawing.SystemColors.Info;
             this.button7.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(587, 3);
+            this.button7.Location = new System.Drawing.Point(1016, 3);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(99, 32);
             this.button7.TabIndex = 28;
@@ -347,7 +348,7 @@ namespace Bike_Rental_System
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1139, 505);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);

@@ -56,7 +56,7 @@ namespace Bike_Rental_System
         {
             Con.Open();
             // string query = "select * from Benefactors";
-            string query = "SELECT benefactor_No, surname, first_name, middle_name, email, phone_No, address from Benefactors WHERE Benefactors.isActive IS NOT NULL";
+            string query = "SELECT benefactor_No, surname, first_name, middle_name, email, phone_No, address from Benefactors WHERE Benefactors.isActive = 'TRUE'";
 
             SqlDataAdapter sqldata = new SqlDataAdapter(query, Con);
             System.Data.DataTable dtbl = new System.Data.DataTable();
@@ -71,7 +71,7 @@ namespace Bike_Rental_System
         {
             Con.Open();
             // string query = "select * from Benefactors";
-            string query = "SELECT benefactor_No, surname, first_name, middle_name, email, phone_No, address from Benefactors WHERE Benefactors.isActive IS NULL";
+            string query = "SELECT benefactor_No, surname, first_name, middle_name, email, phone_No, address from Benefactors WHERE Benefactors.isActive  = 'FALSE'";
 
             SqlDataAdapter sqldata = new SqlDataAdapter(query, Con);
             System.Data.DataTable dtbl = new System.Data.DataTable();
@@ -79,6 +79,11 @@ namespace Bike_Rental_System
 
             dgvbenefactors.DataSource = dtbl;
             Con.Close();
+        }
+
+        private void dgvbenefactors_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
