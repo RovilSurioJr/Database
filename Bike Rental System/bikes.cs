@@ -12,18 +12,13 @@ namespace Bike_Rental_System
         }
         SqlConnection Con = new SqlConnection(@"Data Source=DESKTOP-FQPTJQM\SQLEXPRESS;Initial Catalog=Bike_Rental;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void addBikebut_Click(object sender, EventArgs e)
         {
             try
             {
                 Con.Open();
 
-                if (bike_model.Text == "" || benefactor_No.Text == "" || bike_color.Text == "" || bike_accessory.Text == "" || bike_condition.Text == "" || donation_date.Text == "" || isActiveState.Text == "")
+                if (bike_No.Text == "" || bike_model.Text == "" || benefactor_No.Text == "" || bike_color.Text == "" || bike_accessory.Text == "" || bike_condition.Text == "" || donation_date.Text == "" || isActiveState.Text == "")
                 {
                     MessageBox.Show("All columns does not allow Null!");
                     Con.Close();
@@ -43,16 +38,6 @@ namespace Bike_Rental_System
                 MessageBox.Show(ex.Message);
                 Con.Close();
             }
-        }
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Con.Open();
-            string query = "SELECT * from Bikes";
-            SqlDataAdapter sqldata = new SqlDataAdapter(query, Con);
-            System.Data.DataTable dtbl = new System.Data.DataTable();
-            sqldata.Fill(dtbl);
-            dgvBikes.DataSource = dtbl;
-            Con.Close();
         }
         private void inactivebut_Click(object sender, EventArgs e)
         {
@@ -161,7 +146,6 @@ namespace Bike_Rental_System
             };
             func(Controls);
         }
-
         private void showbenefactors_Click(object sender, EventArgs e)
         {
             Con.Open();
@@ -171,6 +155,20 @@ namespace Bike_Rental_System
             sqldata.Fill(dtbl);
             dgvBikes.DataSource = dtbl;
             Con.Close();
+        }
+        private void refreshbut_Click(object sender, EventArgs e)
+        {
+            Con.Open();
+            string query = "SELECT * from Bikes";
+            SqlDataAdapter sqldata = new SqlDataAdapter(query, Con);
+            System.Data.DataTable dtbl = new System.Data.DataTable();
+            sqldata.Fill(dtbl);
+            dgvBikes.DataSource = dtbl;
+            Con.Close();
+        }
+        private void exitbut_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

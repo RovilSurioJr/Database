@@ -30,16 +30,16 @@ namespace Bike_Rental_System
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.refreshbut = new System.Windows.Forms.Button();
+            this.deletestaffbut = new System.Windows.Forms.Button();
+            this.updatebut = new System.Windows.Forms.Button();
             this.addStaffbutton = new System.Windows.Forms.Button();
             this.address = new System.Windows.Forms.TextBox();
             this.phone_No = new System.Windows.Forms.TextBox();
             this.email = new System.Windows.Forms.TextBox();
             this.middle_name = new System.Windows.Forms.TextBox();
             this.first_name = new System.Windows.Forms.TextBox();
-            this.last_name = new System.Windows.Forms.TextBox();
+            this.surname = new System.Windows.Forms.TextBox();
             this.staff_No = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,58 +49,62 @@ namespace Bike_Rental_System
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.inactivestaffsbut = new System.Windows.Forms.Button();
+            this.activestafffsbut = new System.Windows.Forms.Button();
+            this.dgvstaffs = new System.Windows.Forms.DataGridView();
             this.isActivestate = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.dgvStaffs = new System.Windows.Forms.DataGridView();
+            this.cleartextbox = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStaffs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvstaffs)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("p5hatty", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(252, 30);
+            this.label1.Location = new System.Drawing.Point(11, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(245, 27);
             this.label1.TabIndex = 5;
             this.label1.Text = "MANAGE STAFFS";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button5
+            // refreshbut
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.Info;
-            this.button5.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(341, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(156, 32);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "REFRESH TABLE";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.refreshbut.BackColor = System.Drawing.SystemColors.Info;
+            this.refreshbut.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshbut.Location = new System.Drawing.Point(734, 3);
+            this.refreshbut.Name = "refreshbut";
+            this.refreshbut.Size = new System.Drawing.Size(156, 32);
+            this.refreshbut.TabIndex = 23;
+            this.refreshbut.Text = "REFRESH TABLE";
+            this.refreshbut.UseVisualStyleBackColor = false;
+            this.refreshbut.Click += new System.EventHandler(this.refreshbut_Click);
             // 
-            // button4
+            // deletestaffbut
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.Info;
-            this.button4.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(230, 353);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(82, 32);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "DELETE";
-            this.button4.UseVisualStyleBackColor = false;
+            this.deletestaffbut.BackColor = System.Drawing.SystemColors.Info;
+            this.deletestaffbut.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deletestaffbut.Location = new System.Drawing.Point(230, 353);
+            this.deletestaffbut.Name = "deletestaffbut";
+            this.deletestaffbut.Size = new System.Drawing.Size(82, 32);
+            this.deletestaffbut.TabIndex = 21;
+            this.deletestaffbut.Text = "DELETE";
+            this.deletestaffbut.UseVisualStyleBackColor = false;
+            this.deletestaffbut.Click += new System.EventHandler(this.deletestaffbut_Click);
             // 
-            // button3
+            // updatebut
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Info;
-            this.button3.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(128, 353);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(82, 32);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "EDIT";
-            this.button3.UseVisualStyleBackColor = false;
+            this.updatebut.BackColor = System.Drawing.SystemColors.Info;
+            this.updatebut.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updatebut.Location = new System.Drawing.Point(127, 353);
+            this.updatebut.Name = "updatebut";
+            this.updatebut.Size = new System.Drawing.Size(83, 32);
+            this.updatebut.TabIndex = 20;
+            this.updatebut.Text = "UPDATE";
+            this.updatebut.UseVisualStyleBackColor = false;
+            this.updatebut.Click += new System.EventHandler(this.updatebut_Click);
             // 
             // addStaffbutton
             // 
@@ -112,7 +116,7 @@ namespace Bike_Rental_System
             this.addStaffbutton.TabIndex = 19;
             this.addStaffbutton.Text = "ADD";
             this.addStaffbutton.UseVisualStyleBackColor = false;
-            this.addStaffbutton.Click += new System.EventHandler(this.button2_Click);
+            this.addStaffbutton.Click += new System.EventHandler(this.addStaffbutton_Click);
             // 
             // address
             // 
@@ -159,14 +163,14 @@ namespace Bike_Rental_System
             this.first_name.Size = new System.Drawing.Size(155, 26);
             this.first_name.TabIndex = 13;
             // 
-            // last_name
+            // surname
             // 
-            this.last_name.BackColor = System.Drawing.SystemColors.Info;
-            this.last_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.last_name.Location = new System.Drawing.Point(157, 83);
-            this.last_name.Name = "last_name";
-            this.last_name.Size = new System.Drawing.Size(155, 26);
-            this.last_name.TabIndex = 12;
+            this.surname.BackColor = System.Drawing.SystemColors.Info;
+            this.surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.surname.Location = new System.Drawing.Point(157, 83);
+            this.surname.Name = "surname";
+            this.surname.Size = new System.Drawing.Size(155, 26);
+            this.surname.TabIndex = 12;
             // 
             // staff_No
             // 
@@ -250,19 +254,22 @@ namespace Bike_Rental_System
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.panel1.Controls.Add(this.dgvStaffs);
+            this.panel1.Controls.Add(this.cleartextbox);
+            this.panel1.Controls.Add(this.inactivestaffsbut);
+            this.panel1.Controls.Add(this.activestafffsbut);
+            this.panel1.Controls.Add(this.dgvstaffs);
             this.panel1.Controls.Add(this.isActivestate);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.refreshbut);
+            this.panel1.Controls.Add(this.deletestaffbut);
+            this.panel1.Controls.Add(this.updatebut);
             this.panel1.Controls.Add(this.addStaffbutton);
             this.panel1.Controls.Add(this.address);
             this.panel1.Controls.Add(this.phone_No);
             this.panel1.Controls.Add(this.email);
             this.panel1.Controls.Add(this.middle_name);
             this.panel1.Controls.Add(this.first_name);
-            this.panel1.Controls.Add(this.last_name);
+            this.panel1.Controls.Add(this.surname);
             this.panel1.Controls.Add(this.staff_No);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
@@ -273,8 +280,41 @@ namespace Bike_Rental_System
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(0, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(801, 392);
+            this.panel1.Size = new System.Drawing.Size(1139, 412);
             this.panel1.TabIndex = 4;
+            // 
+            // inactivestaffsbut
+            // 
+            this.inactivestaffsbut.BackColor = System.Drawing.SystemColors.Info;
+            this.inactivestaffsbut.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inactivestaffsbut.Location = new System.Drawing.Point(1003, 3);
+            this.inactivestaffsbut.Name = "inactivestaffsbut";
+            this.inactivestaffsbut.Size = new System.Drawing.Size(100, 32);
+            this.inactivestaffsbut.TabIndex = 28;
+            this.inactivestaffsbut.Text = "INACTIVE";
+            this.inactivestaffsbut.UseVisualStyleBackColor = false;
+            this.inactivestaffsbut.Click += new System.EventHandler(this.inactivestaffsbut_Click);
+            // 
+            // activestafffsbut
+            // 
+            this.activestafffsbut.BackColor = System.Drawing.SystemColors.Info;
+            this.activestafffsbut.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.activestafffsbut.Location = new System.Drawing.Point(896, 3);
+            this.activestafffsbut.Name = "activestafffsbut";
+            this.activestafffsbut.Size = new System.Drawing.Size(101, 32);
+            this.activestafffsbut.TabIndex = 27;
+            this.activestafffsbut.Text = "ACTIVE";
+            this.activestafffsbut.UseVisualStyleBackColor = false;
+            this.activestafffsbut.Click += new System.EventHandler(this.activestafffsbut_Click);
+            // 
+            // dgvstaffs
+            // 
+            this.dgvstaffs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvstaffs.Location = new System.Drawing.Point(341, 41);
+            this.dgvstaffs.Name = "dgvstaffs";
+            this.dgvstaffs.Size = new System.Drawing.Size(762, 344);
+            this.dgvstaffs.TabIndex = 26;
+            this.dgvstaffs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvstaffs_CellContentClick);
             // 
             // isActivestate
             // 
@@ -298,7 +338,7 @@ namespace Bike_Rental_System
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("p5hatty", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(757, 12);
+            this.button1.Location = new System.Drawing.Point(1096, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(31, 26);
             this.button1.TabIndex = 9;
@@ -306,20 +346,24 @@ namespace Bike_Rental_System
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dgvStaffs
+            // cleartextbox
             // 
-            this.dgvStaffs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStaffs.Location = new System.Drawing.Point(346, 41);
-            this.dgvStaffs.Name = "dgvStaffs";
-            this.dgvStaffs.Size = new System.Drawing.Size(442, 337);
-            this.dgvStaffs.TabIndex = 26;
+            this.cleartextbox.BackColor = System.Drawing.SystemColors.Info;
+            this.cleartextbox.Font = new System.Drawing.Font("p5hatty", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cleartextbox.Location = new System.Drawing.Point(166, 9);
+            this.cleartextbox.Name = "cleartextbox";
+            this.cleartextbox.Size = new System.Drawing.Size(137, 32);
+            this.cleartextbox.TabIndex = 29;
+            this.cleartextbox.Text = "CLEAR TEXTBOX";
+            this.cleartextbox.UseVisualStyleBackColor = false;
+            this.cleartextbox.Click += new System.EventHandler(this.cleartextbox_Click);
             // 
             // staff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1139, 505);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -329,7 +373,7 @@ namespace Bike_Rental_System
             this.Text = "staff";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStaffs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvstaffs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,16 +382,16 @@ namespace Bike_Rental_System
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button refreshbut;
+        private System.Windows.Forms.Button deletestaffbut;
+        private System.Windows.Forms.Button updatebut;
         private System.Windows.Forms.Button addStaffbutton;
         private System.Windows.Forms.TextBox address;
         private System.Windows.Forms.TextBox phone_No;
         private System.Windows.Forms.TextBox email;
         private System.Windows.Forms.TextBox middle_name;
         private System.Windows.Forms.TextBox first_name;
-        private System.Windows.Forms.TextBox last_name;
+        private System.Windows.Forms.TextBox surname;
         private System.Windows.Forms.TextBox staff_No;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -359,7 +403,10 @@ namespace Bike_Rental_System
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox isActivestate;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dgvStaffs;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvstaffs;
+        private System.Windows.Forms.Button activestafffsbut;
+        private System.Windows.Forms.Button inactivestaffsbut;
+        private System.Windows.Forms.Button cleartextbox;
     }
 }

@@ -30,13 +30,14 @@ namespace Bike_Rental_System
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.addBikebut = new System.Windows.Forms.Button();
+            this.showbenefactors = new System.Windows.Forms.Button();
+            this.cleartextbox = new System.Windows.Forms.Button();
             this.activebut = new System.Windows.Forms.Button();
             this.inactivebut = new System.Windows.Forms.Button();
             this.dgvBikes = new System.Windows.Forms.DataGridView();
-            this.button5 = new System.Windows.Forms.Button();
             this.deletebutbikes = new System.Windows.Forms.Button();
             this.editbikedetails = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.isActiveState = new System.Windows.Forms.TextBox();
             this.donation_date = new System.Windows.Forms.TextBox();
             this.bike_condition = new System.Windows.Forms.TextBox();
@@ -53,10 +54,9 @@ namespace Bike_Rental_System
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.cleartextbox = new System.Windows.Forms.Button();
-            this.showbenefactors = new System.Windows.Forms.Button();
+            this.refreshbut = new System.Windows.Forms.Button();
+            this.exitbut = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBikes)).BeginInit();
             this.SuspendLayout();
@@ -64,15 +64,15 @@ namespace Bike_Rental_System
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel1.Controls.Add(this.refreshbut);
+            this.panel1.Controls.Add(this.addBikebut);
             this.panel1.Controls.Add(this.showbenefactors);
             this.panel1.Controls.Add(this.cleartextbox);
             this.panel1.Controls.Add(this.activebut);
             this.panel1.Controls.Add(this.inactivebut);
             this.panel1.Controls.Add(this.dgvBikes);
-            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.deletebutbikes);
             this.panel1.Controls.Add(this.editbikedetails);
-            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.isActiveState);
             this.panel1.Controls.Add(this.donation_date);
             this.panel1.Controls.Add(this.bike_condition);
@@ -93,6 +93,42 @@ namespace Bike_Rental_System
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1139, 410);
             this.panel1.TabIndex = 0;
+            // 
+            // addBikebut
+            // 
+            this.addBikebut.BackColor = System.Drawing.SystemColors.Info;
+            this.addBikebut.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBikebut.Location = new System.Drawing.Point(33, 353);
+            this.addBikebut.Name = "addBikebut";
+            this.addBikebut.Size = new System.Drawing.Size(82, 32);
+            this.addBikebut.TabIndex = 30;
+            this.addBikebut.Text = "ADD";
+            this.addBikebut.UseVisualStyleBackColor = false;
+            this.addBikebut.Click += new System.EventHandler(this.addBikebut_Click);
+            // 
+            // showbenefactors
+            // 
+            this.showbenefactors.BackColor = System.Drawing.SystemColors.Info;
+            this.showbenefactors.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showbenefactors.Location = new System.Drawing.Point(341, 3);
+            this.showbenefactors.Name = "showbenefactors";
+            this.showbenefactors.Size = new System.Drawing.Size(188, 32);
+            this.showbenefactors.TabIndex = 29;
+            this.showbenefactors.Text = "SHOW BENEFACTORS";
+            this.showbenefactors.UseVisualStyleBackColor = false;
+            this.showbenefactors.Click += new System.EventHandler(this.showbenefactors_Click);
+            // 
+            // cleartextbox
+            // 
+            this.cleartextbox.BackColor = System.Drawing.SystemColors.Info;
+            this.cleartextbox.Font = new System.Drawing.Font("p5hatty", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cleartextbox.Location = new System.Drawing.Point(166, 9);
+            this.cleartextbox.Name = "cleartextbox";
+            this.cleartextbox.Size = new System.Drawing.Size(137, 32);
+            this.cleartextbox.TabIndex = 28;
+            this.cleartextbox.Text = "CLEAR TEXTBOX";
+            this.cleartextbox.UseVisualStyleBackColor = false;
+            this.cleartextbox.Click += new System.EventHandler(this.cleartextbox_Click);
             // 
             // activebut
             // 
@@ -127,18 +163,6 @@ namespace Bike_Rental_System
             this.dgvBikes.TabIndex = 24;
             this.dgvBikes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBikes_CellContentClick);
             // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.SystemColors.Info;
-            this.button5.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(747, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(156, 32);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "REFRESH TABLE";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // deletebutbikes
             // 
             this.deletebutbikes.BackColor = System.Drawing.SystemColors.Info;
@@ -155,25 +179,13 @@ namespace Bike_Rental_System
             // 
             this.editbikedetails.BackColor = System.Drawing.SystemColors.Info;
             this.editbikedetails.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editbikedetails.Location = new System.Drawing.Point(128, 353);
+            this.editbikedetails.Location = new System.Drawing.Point(132, 353);
             this.editbikedetails.Name = "editbikedetails";
             this.editbikedetails.Size = new System.Drawing.Size(82, 32);
             this.editbikedetails.TabIndex = 20;
             this.editbikedetails.Text = "EDIT";
             this.editbikedetails.UseVisualStyleBackColor = false;
             this.editbikedetails.Click += new System.EventHandler(this.editbikedetails_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.Info;
-            this.button2.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(26, 353);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(82, 32);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "ADD";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // isActiveState
             // 
@@ -327,17 +339,6 @@ namespace Bike_Rental_System
             this.label2.TabIndex = 3;
             this.label2.Text = "Bike #:";
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("p5hatty", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1096, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 26);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -348,29 +349,28 @@ namespace Bike_Rental_System
             this.label1.TabIndex = 2;
             this.label1.Text = "MANAGE BIKES";
             // 
-            // cleartextbox
+            // refreshbut
             // 
-            this.cleartextbox.BackColor = System.Drawing.SystemColors.Info;
-            this.cleartextbox.Font = new System.Drawing.Font("p5hatty", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cleartextbox.Location = new System.Drawing.Point(166, 9);
-            this.cleartextbox.Name = "cleartextbox";
-            this.cleartextbox.Size = new System.Drawing.Size(137, 32);
-            this.cleartextbox.TabIndex = 28;
-            this.cleartextbox.Text = "CLEAR TEXTBOX";
-            this.cleartextbox.UseVisualStyleBackColor = false;
-            this.cleartextbox.Click += new System.EventHandler(this.cleartextbox_Click);
+            this.refreshbut.BackColor = System.Drawing.SystemColors.Info;
+            this.refreshbut.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshbut.Location = new System.Drawing.Point(747, 3);
+            this.refreshbut.Name = "refreshbut";
+            this.refreshbut.Size = new System.Drawing.Size(156, 32);
+            this.refreshbut.TabIndex = 31;
+            this.refreshbut.Text = "REFRESH TABLE";
+            this.refreshbut.UseVisualStyleBackColor = false;
+            this.refreshbut.Click += new System.EventHandler(this.refreshbut_Click);
             // 
-            // showbenefactors
+            // exitbut
             // 
-            this.showbenefactors.BackColor = System.Drawing.SystemColors.Info;
-            this.showbenefactors.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showbenefactors.Location = new System.Drawing.Point(341, 3);
-            this.showbenefactors.Name = "showbenefactors";
-            this.showbenefactors.Size = new System.Drawing.Size(188, 32);
-            this.showbenefactors.TabIndex = 29;
-            this.showbenefactors.Text = "SHOW BENEFACTORS";
-            this.showbenefactors.UseVisualStyleBackColor = false;
-            this.showbenefactors.Click += new System.EventHandler(this.showbenefactors_Click);
+            this.exitbut.Font = new System.Drawing.Font("p5hatty", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitbut.Location = new System.Drawing.Point(1096, 12);
+            this.exitbut.Name = "exitbut";
+            this.exitbut.Size = new System.Drawing.Size(31, 26);
+            this.exitbut.TabIndex = 3;
+            this.exitbut.Text = "X";
+            this.exitbut.UseVisualStyleBackColor = true;
+            this.exitbut.Click += new System.EventHandler(this.exitbut_Click);
             // 
             // bikes
             // 
@@ -378,8 +378,8 @@ namespace Bike_Rental_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(1139, 505);
+            this.Controls.Add(this.exitbut);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "bikes";
@@ -396,7 +396,6 @@ namespace Bike_Rental_System
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -416,12 +415,13 @@ namespace Bike_Rental_System
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button deletebutbikes;
         private System.Windows.Forms.Button editbikedetails;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DataGridView dgvBikes;
         private System.Windows.Forms.Button inactivebut;
         private System.Windows.Forms.Button activebut;
         private System.Windows.Forms.Button cleartextbox;
         private System.Windows.Forms.Button showbenefactors;
+        private System.Windows.Forms.Button addBikebut;
+        private System.Windows.Forms.Button refreshbut;
+        private System.Windows.Forms.Button exitbut;
     }
 }

@@ -12,28 +12,26 @@ namespace Bike_Rental_System
         }
         SqlConnection Con = new SqlConnection(@"Data Source=DESKTOP-FQPTJQM\SQLEXPRESS;Initial Catalog=Bike_Rental;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
-        private void button2_Click(object sender, EventArgs e)
+        private void addbut_Click(object sender, EventArgs e)
         {
             try
             {
                 Con.Open();
- 
-                if (last_name.Text == "" || first_name.Text == "" || email.Text == "" || phone_No.Text  == "" || address.Text == "" || isActiveState.Text == "")
+
+                if (benefactor_No.Text == "" || last_name.Text == "" || first_name.Text == "" || email.Text == "" || phone_No.Text == "" || address.Text == "" || isActiveState.Text == "")
                 {
                     MessageBox.Show("There are columns that are not allowing nulls!");
                     Con.Close();
                 }
                 else
-                { 
-                    string query = "INSERT INTO Benefactors VALUES(" + benefactor_No.Text + ",'" + last_name.Text + "','" + 
+                {
+                    string query = "INSERT INTO Benefactors VALUES(" + benefactor_No.Text + ",'" + last_name.Text + "','" +
                         first_name.Text + "','" + middle_name.Text + "','" + email.Text + "','" + phone_No.Text + "','" + address.Text + "','" + isActiveState.Text + "')";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("benefactor added successfully");
                     Con.Close();
-
                 }
-
             }
             catch (Exception ex)
             {
@@ -41,12 +39,7 @@ namespace Bike_Rental_System
                 Con.Close();
             }
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void button5_Click(object sender, EventArgs e) //  REFRESH OR SHOW ALL
+        private void refreshbut_Click(object sender, EventArgs e)
         {
             Con.Open();
             string query = "SELECT * FROM Benefactors";
@@ -57,8 +50,7 @@ namespace Bike_Rental_System
             dgvbenefactors.DataSource = dtbl;
             Con.Close();
         }
-
-        private void button6_Click(object sender, EventArgs e) // SELECT ACTIVE RECORDS
+        private void activerecordbut_Click(object sender, EventArgs e)
         {
             Con.Open();
             string query = "SELECT benefactor_No, surname, first_name, middle_name, email, phone_No, address from Benefactors WHERE Benefactors.isActive = 'TRUE'";
@@ -68,7 +60,7 @@ namespace Bike_Rental_System
             dgvbenefactors.DataSource = dtbl;
             Con.Close();
         }
-        private void button7_Click(object sender, EventArgs e) // SELEECT INACTIVE RECORS
+        private void inactiverecordbut_Click(object sender, EventArgs e)
         {
             Con.Open();
             string query = "SELECT benefactor_No, surname, first_name, middle_name, email, phone_No, address from Benefactors WHERE Benefactors.isActive  = 'FALSE'";
@@ -163,6 +155,11 @@ namespace Bike_Rental_System
                 }
             };
             func(Controls);
+        }
+
+        private void exitbut_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
