@@ -180,6 +180,20 @@ namespace Bike_Rental_System
             dgvrentalrec.DataSource = dtbl;
             Con.Close();
         }
+
+        private void cleartext_Click(object sender, EventArgs e)
+        {
+            bike_No.Text = "";
+            beneficiary_No.Text = "";
+            rental_date.Text = "";
+            return_date.Text = "";
+            cond_after.Text = "";
+            cond_before.Text = "";
+            rental_rec_No.Text = "";
+            lender_staff_No.Text = "";
+            receiver_staff_No.Text = "";
+            validity.Text = "";
+        }
     }
 
 }

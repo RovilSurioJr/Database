@@ -20,7 +20,6 @@ E:\roviljr\OneDrive\Documents\GitHub\Database\Bike Rental System t\obj\Debug\Bik
 E:\roviljr\OneDrive\Documents\GitHub\Database\Bike Rental System t\obj\Debug\Bike_Rental_System.benefactors.resources
 E:\roviljr\OneDrive\Documents\GitHub\Database\Bike Rental System t\obj\Debug\Bike_Rental_System.benefeciaries.resources
 E:\roviljr\OneDrive\Documents\GitHub\Database\Bike Rental System t\obj\Debug\Bike_Rental_System.bikes.resources
-E:\roviljr\OneDrive\Documents\GitHub\Database\Bike Rental System t\obj\Debug\Bike_Rental_System.Form1.resources
 E:\roviljr\OneDrive\Documents\GitHub\Database\Bike Rental System t\obj\Debug\Bike_Rental_System.Properties.Resources.resources
 E:\roviljr\OneDrive\Documents\GitHub\Database\Bike Rental System t\obj\Debug\Bike_Rental_System.rental_records.resources
 E:\roviljr\OneDrive\Documents\GitHub\Database\Bike Rental System t\obj\Debug\Bike_Rental_System.staff.resources
@@ -28,3 +27,4 @@ E:\roviljr\OneDrive\Documents\GitHub\Database\Bike Rental System t\obj\Debug\Bik
 E:\roviljr\OneDrive\Documents\GitHub\Database\Bike Rental System t\obj\Debug\Bike Rental System.csproj.CoreCompileInputs.cache
 E:\roviljr\OneDrive\Documents\GitHub\Database\Bike Rental System t\obj\Debug\Bike Rental System.exe
 E:\roviljr\OneDrive\Documents\GitHub\Database\Bike Rental System t\obj\Debug\Bike Rental System.pdb
+E:\roviljr\OneDrive\Documents\GitHub\Database\Bike Rental System t\obj\Debug\Bike_Rental_System.main.resources

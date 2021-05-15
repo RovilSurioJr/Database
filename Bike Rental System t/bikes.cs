@@ -134,22 +134,14 @@ namespace Bike_Rental_System
         }
         private void cleartextbox_Click(object sender, EventArgs e)
         {
-            Action<Control.ControlCollection> func = null;
-            func = (controls) =>
-            {
-                foreach (Control control in controls)
-                {
-                    if (control is TextBox)
-                    {
-                        (control as TextBox).Clear();
-                    }
-                    else
-                    {
-                        func(control.Controls);
-                    }
-                }
-            };
-            func(Controls);
+            bike_model.Text = "";
+            benefactor_No.Text = "";
+            bike_color.Text = "";
+            bike_accessory.Text = "";
+            bike_condition.Text = "";
+            isActiveState.Text = "";
+            bike_No.Text = "";
+            donation_date.Text = "";
         }
         private void showbenefactors_Click(object sender, EventArgs e)
         {

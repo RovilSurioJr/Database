@@ -77,7 +77,7 @@ namespace Bike_Rental_System
         {
             try
             {
-                if (staff_No.Text == "" || surname.Text == "" || first_name.Text == "" || email.Text == "" || phone_No.Text == "" || address.Text == "")
+                if (staff_No.Text == "" || surname.Text == "" || first_name.Text == "" || email.Text == "" || phone_No.Text == "" || address.Text == "" || isActivestate.Text == "")
                 {
                     MessageBox.Show("There is missing field! Only Middle_name allow NULLS");
                     Con.Close();
@@ -152,22 +152,14 @@ namespace Bike_Rental_System
 
         private void cleartextbox_Click(object sender, EventArgs e)
         {
-            Action<Control.ControlCollection> func = null;
-            func = (controls) =>
-            {
-                foreach (Control control in controls)
-                {
-                    if (control is TextBox)
-                    {
-                        (control as TextBox).Clear();
-                    }
-                    else
-                    {
-                        func(control.Controls);
-                    }
-                }
-            };
-            func(Controls);
+            staff_No.Text = "";
+            surname.Text = "";
+            first_name.Text = "";
+            email.Text = "";
+            phone_No.Text = "";
+            address.Text = "";
+            isActivestate.Text = "";
+            middle_name.Text = "";
         }
     }
 }

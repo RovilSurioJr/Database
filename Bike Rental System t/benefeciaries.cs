@@ -21,7 +21,7 @@ namespace Bike_Rental_System
             {
                 Con.Open();
 
-                if (surname.Text == "" || first_name.Text == "" || email.Text == "" || phone_No.Text == "" || address.Text == "")
+                if (first_name.Text == "" || email.Text == "" || phone_No.Text == "" || address.Text == "")
                 {
                     MessageBox.Show("There are columns that are not allowing nulls!");
                     Con.Close();
@@ -130,22 +130,13 @@ namespace Bike_Rental_System
 
         private void cleartext_Click(object sender, EventArgs e)
         {
-            Action<Control.ControlCollection> func = null;
-            func = (controls) =>
-            {
-                foreach (Control control in controls)
-                {
-                    if (control is TextBox)
-                    {
-                        (control as TextBox).Clear();
-                    }
-                    else
-                    {
-                        func(control.Controls);
-                    }
-                }
-            };
-            func(Controls);
+            beneficiary_No.Text = "";
+            surname.Text = "";
+            first_name.Text = "";
+            middle_name.Text = "";
+            email.Text = "";
+            phone_No.Text = "";
+            address.Text = "";
         }
 
     }
