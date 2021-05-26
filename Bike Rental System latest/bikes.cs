@@ -30,12 +30,18 @@ namespace Bike_Rental_System
                     MessageBox.Show("The bike number is auto-generated!");
                     Con.Close();
                 }
+                else if (donation_date.Text != "")
+                {
+                        MessageBox.Show("The donation_date is auto-generated!");
+                        Con.Close();
+                }
                 else
                 {
+                    var Date = DateTime.Now.ToString("M/d/yyyy");
                    /* string query = "INSERT INTO Bikes (bike_model, benefactor_No,bike_color,bike_accessory,bike_condition,donation_date,isActive) VALUES ('" + bike_model.Text + "','" +
                         benefactor_No.Text + "','" + bike_color.Text + "','" + bike_accessory.Text + "','" + bike_condition.Text + "','" + donation_date.Text + "','" + isActiveState.Text + "')"; */
-                    string query = "INSERT INTO Bikes (bike_model, benefactor_No,bike_color,bike_accessory,bike_condition,isActive) VALUES ('" + bike_model.Text + "','" +
-                        benefactor_No.Text + "','" + bike_color.Text + "','" + bike_accessory.Text + "','" + bike_condition.Text + "','"  + isActiveState.Text + "')";
+                    string query = "INSERT INTO Bikes (bike_model, benefactor_No,bike_color,bike_accessory,bike_condition,isActive,donation_date) VALUES ('" + bike_model.Text + "','" +
+                        benefactor_No.Text + "','" + bike_color.Text + "','" + bike_accessory.Text + "','" + bike_condition.Text + "','"  + isActiveState.Text + "','" + Date + "')";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Bike added successfully");
@@ -87,6 +93,11 @@ namespace Bike_Rental_System
 
                 {
                     MessageBox.Show("Active state is empty");
+                    Con.Close();
+                }
+                else if (donation_date.Text == "")
+                {
+                    MessageBox.Show("The donation_date cannot be empty");
                     Con.Close();
                 }
                 else
