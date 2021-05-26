@@ -40,7 +40,6 @@ namespace Bike_Rental_System
             this.deletebutbikes = new System.Windows.Forms.Button();
             this.editbikedetails = new System.Windows.Forms.Button();
             this.isActiveState = new System.Windows.Forms.TextBox();
-            this.donation_date = new System.Windows.Forms.TextBox();
             this.bike_condition = new System.Windows.Forms.TextBox();
             this.bike_accessory = new System.Windows.Forms.TextBox();
             this.bike_color = new System.Windows.Forms.TextBox();
@@ -48,7 +47,6 @@ namespace Bike_Rental_System
             this.bike_model = new System.Windows.Forms.TextBox();
             this.bike_No = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -74,7 +72,6 @@ namespace Bike_Rental_System
             this.panel1.Controls.Add(this.deletebutbikes);
             this.panel1.Controls.Add(this.editbikedetails);
             this.panel1.Controls.Add(this.isActiveState);
-            this.panel1.Controls.Add(this.donation_date);
             this.panel1.Controls.Add(this.bike_condition);
             this.panel1.Controls.Add(this.bike_accessory);
             this.panel1.Controls.Add(this.bike_color);
@@ -82,7 +79,6 @@ namespace Bike_Rental_System
             this.panel1.Controls.Add(this.bike_model);
             this.panel1.Controls.Add(this.bike_No);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -203,19 +199,10 @@ namespace Bike_Rental_System
             // 
             this.isActiveState.BackColor = System.Drawing.SystemColors.Info;
             this.isActiveState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.isActiveState.Location = new System.Drawing.Point(157, 311);
+            this.isActiveState.Location = new System.Drawing.Point(157, 270);
             this.isActiveState.Name = "isActiveState";
             this.isActiveState.Size = new System.Drawing.Size(155, 26);
             this.isActiveState.TabIndex = 18;
-            // 
-            // donation_date
-            // 
-            this.donation_date.BackColor = System.Drawing.SystemColors.Info;
-            this.donation_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.donation_date.Location = new System.Drawing.Point(157, 271);
-            this.donation_date.Name = "donation_date";
-            this.donation_date.Size = new System.Drawing.Size(155, 26);
-            this.donation_date.TabIndex = 17;
             // 
             // bike_condition
             // 
@@ -275,21 +262,11 @@ namespace Bike_Rental_System
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("p5hatty", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(12, 313);
+            this.label9.Location = new System.Drawing.Point(12, 272);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(123, 19);
             this.label9.TabIndex = 10;
             this.label9.Text = "Active State:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("p5hatty", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 273);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(132, 19);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Donation date:";
             // 
             // label7
             // 
@@ -401,7 +378,6 @@ namespace Bike_Rental_System
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox isActiveState;
-        private System.Windows.Forms.TextBox donation_date;
         private System.Windows.Forms.TextBox bike_condition;
         private System.Windows.Forms.TextBox bike_accessory;
         private System.Windows.Forms.TextBox bike_color;
@@ -409,7 +385,6 @@ namespace Bike_Rental_System
         private System.Windows.Forms.TextBox bike_model;
         private System.Windows.Forms.TextBox bike_No;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

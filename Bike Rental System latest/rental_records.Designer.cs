@@ -38,8 +38,6 @@ namespace Bike_Rental_System
             this.active_but = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.validity = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.receiver_staff_No = new System.Windows.Forms.TextBox();
@@ -53,8 +51,6 @@ namespace Bike_Rental_System
             this.addbut = new System.Windows.Forms.Button();
             this.cond_after = new System.Windows.Forms.TextBox();
             this.cond_before = new System.Windows.Forms.TextBox();
-            this.return_date = new System.Windows.Forms.TextBox();
-            this.rental_date = new System.Windows.Forms.TextBox();
             this.beneficiary_No = new System.Windows.Forms.TextBox();
             this.bike_No = new System.Windows.Forms.TextBox();
             this.rental_rec_No = new System.Windows.Forms.TextBox();
@@ -63,6 +59,8 @@ namespace Bike_Rental_System
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvrentalrec)).BeginInit();
             this.SuspendLayout();
@@ -88,8 +86,6 @@ namespace Bike_Rental_System
             this.panel1.Controls.Add(this.active_but);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.validity);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.receiver_staff_No);
@@ -103,8 +99,6 @@ namespace Bike_Rental_System
             this.panel1.Controls.Add(this.addbut);
             this.panel1.Controls.Add(this.cond_after);
             this.panel1.Controls.Add(this.cond_before);
-            this.panel1.Controls.Add(this.return_date);
-            this.panel1.Controls.Add(this.rental_date);
             this.panel1.Controls.Add(this.beneficiary_No);
             this.panel1.Controls.Add(this.bike_No);
             this.panel1.Controls.Add(this.rental_rec_No);
@@ -181,7 +175,7 @@ namespace Bike_Rental_System
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 238);
+            this.label1.Location = new System.Drawing.Point(14, 181);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(144, 16);
             this.label1.TabIndex = 35;
@@ -191,37 +185,17 @@ namespace Bike_Rental_System
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("p5hatty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(13, 209);
+            this.label8.Location = new System.Drawing.Point(14, 148);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(151, 16);
             this.label8.TabIndex = 34;
             this.label8.Text = "Bike_Cond._Before:";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("p5hatty", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 175);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(113, 19);
-            this.label7.TabIndex = 33;
-            this.label7.Text = "Return date:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("p5hatty", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 146);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 19);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Rental date:";
-            // 
             // validity
             // 
             this.validity.BackColor = System.Drawing.SystemColors.Info;
             this.validity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.validity.Location = new System.Drawing.Point(172, 317);
+            this.validity.Location = new System.Drawing.Point(171, 271);
             this.validity.Name = "validity";
             this.validity.Size = new System.Drawing.Size(155, 26);
             this.validity.TabIndex = 31;
@@ -230,7 +204,7 @@ namespace Bike_Rental_System
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("p5hatty", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(13, 319);
+            this.label10.Location = new System.Drawing.Point(13, 271);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(76, 19);
             this.label10.TabIndex = 30;
@@ -240,7 +214,7 @@ namespace Bike_Rental_System
             // 
             this.receiver_staff_No.BackColor = System.Drawing.SystemColors.Info;
             this.receiver_staff_No.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.receiver_staff_No.Location = new System.Drawing.Point(172, 287);
+            this.receiver_staff_No.Location = new System.Drawing.Point(171, 239);
             this.receiver_staff_No.Name = "receiver_staff_No";
             this.receiver_staff_No.Size = new System.Drawing.Size(155, 26);
             this.receiver_staff_No.TabIndex = 29;
@@ -249,7 +223,7 @@ namespace Bike_Rental_System
             // 
             this.lender_staff_No.BackColor = System.Drawing.SystemColors.Info;
             this.lender_staff_No.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lender_staff_No.Location = new System.Drawing.Point(172, 259);
+            this.lender_staff_No.Location = new System.Drawing.Point(172, 209);
             this.lender_staff_No.Name = "lender_staff_No";
             this.lender_staff_No.Size = new System.Drawing.Size(155, 26);
             this.lender_staff_No.TabIndex = 28;
@@ -258,7 +232,7 @@ namespace Bike_Rental_System
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("p5hatty", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(13, 294);
+            this.label9.Location = new System.Drawing.Point(12, 241);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(158, 19);
             this.label9.TabIndex = 27;
@@ -337,7 +311,7 @@ namespace Bike_Rental_System
             // 
             this.cond_after.BackColor = System.Drawing.SystemColors.Info;
             this.cond_after.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cond_after.Location = new System.Drawing.Point(172, 228);
+            this.cond_after.Location = new System.Drawing.Point(171, 177);
             this.cond_after.Name = "cond_after";
             this.cond_after.Size = new System.Drawing.Size(155, 26);
             this.cond_after.TabIndex = 17;
@@ -346,28 +320,10 @@ namespace Bike_Rental_System
             // 
             this.cond_before.BackColor = System.Drawing.SystemColors.Info;
             this.cond_before.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cond_before.Location = new System.Drawing.Point(172, 199);
+            this.cond_before.Location = new System.Drawing.Point(171, 141);
             this.cond_before.Name = "cond_before";
             this.cond_before.Size = new System.Drawing.Size(155, 26);
             this.cond_before.TabIndex = 16;
-            // 
-            // return_date
-            // 
-            this.return_date.BackColor = System.Drawing.SystemColors.Info;
-            this.return_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.return_date.Location = new System.Drawing.Point(172, 168);
-            this.return_date.Name = "return_date";
-            this.return_date.Size = new System.Drawing.Size(155, 26);
-            this.return_date.TabIndex = 15;
-            // 
-            // rental_date
-            // 
-            this.rental_date.BackColor = System.Drawing.SystemColors.Info;
-            this.rental_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rental_date.Location = new System.Drawing.Point(172, 139);
-            this.rental_date.Name = "rental_date";
-            this.rental_date.Size = new System.Drawing.Size(155, 26);
-            this.rental_date.TabIndex = 14;
             // 
             // beneficiary_No
             // 
@@ -400,7 +356,7 @@ namespace Bike_Rental_System
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("p5hatty", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(13, 266);
+            this.label5.Location = new System.Drawing.Point(12, 212);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(145, 19);
             this.label5.TabIndex = 6;
@@ -446,12 +402,36 @@ namespace Bike_Rental_System
             this.label11.TabIndex = 28;
             this.label11.Text = "MANAGE RENTAL RECORDS";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("p5hatty", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(25, 469);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(517, 12);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "*upon inserting, only provide the bike#, beneficiary#, condition before, lender#," +
+    " and validity";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("p5hatty", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(25, 484);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(519, 12);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "*the update button is for returning a bike, provide the bike cond. after and rece" +
+    "iver staff #";
+            // 
             // rental_records
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(1139, 505);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.exitbut);
@@ -479,8 +459,6 @@ namespace Bike_Rental_System
         private System.Windows.Forms.Button addbut;
         private System.Windows.Forms.TextBox cond_after;
         private System.Windows.Forms.TextBox cond_before;
-        private System.Windows.Forms.TextBox return_date;
-        private System.Windows.Forms.TextBox rental_date;
         private System.Windows.Forms.TextBox beneficiary_No;
         private System.Windows.Forms.TextBox bike_No;
         private System.Windows.Forms.TextBox rental_rec_No;
@@ -496,12 +474,12 @@ namespace Bike_Rental_System
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button inactivebut;
         private System.Windows.Forms.Button active_but;
         private System.Windows.Forms.Button showstaffs;
         private System.Windows.Forms.Button showbikes;
         private System.Windows.Forms.Button showbeneficiary;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label6;
     }
 }

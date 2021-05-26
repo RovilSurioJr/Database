@@ -30,11 +30,7 @@ namespace Bike_Rental_System
                     MessageBox.Show("The bike number is auto-generated!");
                     Con.Close();
                 }
-                else if (donation_date.Text != "")
-                {
-                        MessageBox.Show("The donation_date is auto-generated!");
-                        Con.Close();
-                }
+
                 else
                 {
                     var Date = DateTime.Now.ToString("M/d/yyyy");
@@ -95,9 +91,9 @@ namespace Bike_Rental_System
                     MessageBox.Show("Active state is empty");
                     Con.Close();
                 }
-                else if (donation_date.Text == "")
+                else if (bike_No.Text == "")
                 {
-                    MessageBox.Show("The donation_date cannot be empty");
+                    MessageBox.Show("Please select the bike_No of bike you want to edit");
                     Con.Close();
                 }
                 else
@@ -105,7 +101,7 @@ namespace Bike_Rental_System
                     Con.Open();
                     string query = "UPDATE Bikes SET bike_model = '" + bike_model.Text + "', benefactor_No = '" + benefactor_No.Text + "', " +
                         "bike_color = '" + bike_color.Text + "', bike_accessory = '" + bike_accessory.Text + "',bike_condition = '" + bike_condition.Text + "', " +
-                        "donation_date= '" + donation_date.Text + "', isActive = '" + isActiveState.Text + "' WHERE bike_No ='" + bike_No.Text + "'";
+                        "isActive = '" + isActiveState.Text + "' WHERE bike_No ='" + bike_No.Text + "'";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Bike record was updated");
@@ -154,7 +150,6 @@ namespace Bike_Rental_System
                 bike_color.Text = row.Cells["bike_color"].Value.ToString();
                 bike_accessory.Text = row.Cells["bike_accessory"].Value.ToString();
                 bike_condition.Text = row.Cells["bike_condition"].Value.ToString();
-                donation_date.Text = row.Cells["donation_date"].Value.ToString();
                 isActiveState.Text = row.Cells["isActive"].Value.ToString();
 
             }
@@ -168,7 +163,6 @@ namespace Bike_Rental_System
             bike_condition.Text = "";
             isActiveState.Text = "";
             bike_No.Text = "";
-            donation_date.Text = "";
         }
         private void showbenefactors_Click(object sender, EventArgs e)
         {

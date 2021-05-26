@@ -1,0 +1,13 @@
+USE[Bike_Rental]
+GO
+
+DBCC CHECKIDENT ('[Benefactors]', RESEED, 0);
+GO
+DBCC CHECKIDENT ('[Beneficiaries]', RESEED, 0);
+GO
+DBCC CHECKIDENT ('[Bikes]', RESEED, 0);
+GO
+DBCC CHECKIDENT ('[Rental_records]', RESEED, 0);
+GO
+DBCC CHECKIDENT ('[Staffs]', RESEED, 0);
+GO
