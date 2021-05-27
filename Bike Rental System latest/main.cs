@@ -51,5 +51,10 @@ namespace Bike_Rental_System
             rental_records rr = new rental_records();
             rr.ShowDialog();
         }
+
+        private void main_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

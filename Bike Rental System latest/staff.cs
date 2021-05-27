@@ -23,9 +23,9 @@ namespace Bike_Rental_System
             {
                 Con.Open();
 
-                if (surname.Text == "" || first_name.Text == "" || email.Text == "" || phone_No.Text == "" || address.Text == "" || isActivestate.Text == "")
+                if (isActivestate.Text == "")
                 {
-                    MessageBox.Show("There are columns that are not allowing nulls!");
+                    MessageBox.Show("Active state is empty");
                     Con.Close();
                 }
                 else if (staff_No.Text != "")
