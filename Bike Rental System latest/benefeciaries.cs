@@ -14,7 +14,6 @@ namespace Bike_Rental_System
         private void exitbut_Click(object sender, EventArgs e)
         {
             main s = new main();
-            s.Show();
             this.Close();
         }
         private void addbut_Click(object sender, EventArgs e)

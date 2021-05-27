@@ -14,7 +14,6 @@ namespace Bike_Rental_System
         private void button1_Click(object sender, EventArgs e)
         {
             main s = new main();
-            s.Show();
             this.Close();
         }
         private void addStaffbutton_Click(object sender, EventArgs e)

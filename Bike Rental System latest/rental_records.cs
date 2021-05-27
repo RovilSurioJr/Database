@@ -14,7 +14,6 @@ namespace Bike_Rental_System
         private void exitbut_Click(object sender, EventArgs e)
         {
             main s = new main();
-            s.Show();
             this.Close();
         }
         private void addbut_Click(object sender, EventArgs e)
@@ -25,22 +24,12 @@ namespace Bike_Rental_System
             {
                 Con.Open();
 
-                /*if (bike_No.Text == "" || beneficiary_No.Text == "" || rental_date.Text == "" || cond_before.Text == "" || lender_staff_No.Text == "" || validity.Text == "")
-                {
-                    MessageBox.Show("There are columns that are not allowing nulls!");
-                    Con.Close();
-                }
-                    */
                 if (rental_rec_No.Text != "")
                 {
                     MessageBox.Show("The rental record number is auto-generated!");
                     Con.Close();
                 }
-                //else if (rental_date.Text != "")
-                //{
-                //    MessageBox.Show("The rental date is auto-generated!");
-                //    Con.Close();
-                //}
+
                 else if (validity.Text == "")
                 {
                     MessageBox.Show("Active state is empty");
@@ -87,8 +76,6 @@ namespace Bike_Rental_System
                 rental_rec_No.Text = row.Cells["rental_record_No"].Value.ToString();
                 bike_No.Text = row.Cells["bike_No"].Value.ToString();
                 beneficiary_No.Text = row.Cells["beneficiary_No"].Value.ToString();
-                //rental_date.Text = row.Cells["rental_date"].Value.ToString();
-                //return_date.Text = row.Cells["return_date"].Value.ToString();
                 cond_before.Text = row.Cells["bike_condition_before"].Value.ToString();
                 cond_after.Text = row.Cells["bike_condition_after"].Value.ToString();
                 lender_staff_No.Text = row.Cells["staff_lender_No"].Value.ToString();
@@ -162,10 +149,6 @@ namespace Bike_Rental_System
                 {
                     var Date = DateTime.Now.ToString("M/d/yyyy");
                     Con.Open();
-                    /*string query = "UPDATE Rental_records SET bike_No = '" + bike_No.Text + "', beneficiary_No = '" + beneficiary_No.Text + "', " +
-                        "rental_date = '" + rental_date.Text + "', bike_condition_before = '" + cond_before.Text + "', bike_condition_after = '" + cond_after.Text + "', " +
-                        "staff_lender_No= '" + lender_staff_No.Text + "', staff_receiver_No = '" + receiver_staff_No.Text + "', isValid = '"+ validity.Text + "', return_date = '"+return_date.Text+"' WHERE rental_record_No ='" + rental_rec_No.Text + "'";
-                    */
                     string query = "UPDATE Rental_records SET bike_No = '" + bike_No.Text + "', beneficiary_No = '" + beneficiary_No.Text + "', bike_condition_after = '" + cond_after.Text + "', staff_receiver_No = '" + receiver_staff_No.Text + "', " +
                             "isValid = '" + validity.Text + "', return_date = '" + Date + "' WHERE rental_record_No ='" + rental_rec_No.Text + "'";
 
@@ -239,8 +222,6 @@ namespace Bike_Rental_System
         {
             bike_No.Text = "";
             beneficiary_No.Text = "";
-            //rental_date.Text = "";
-            //return_date.Text = "";
             cond_after.Text = "";
             cond_before.Text = "";
             rental_rec_No.Text = "";
